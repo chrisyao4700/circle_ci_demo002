@@ -20,7 +20,7 @@ public class NameCreaterTestCase {
 
 	@Test
 	public void test() {
-		fail("Test for fail!");
+	//	fail("Test for fail!");
 
 	}
 	@Test

@@ -28,7 +28,7 @@ public class CYHelloWorldView implements ViewNameAdder {
 	private JPanel createPanel(){
 		JPanel panel = new JPanel();
 		//panel.setLayout(null);
-		JLabel label = new JLabel("<html><div style=\"text-align: center;\">" + "Hello World," + "</html>");
+		JLabel label = new JLabel("<html><div style=\"text-align: center;\">" + "Hello World  " + "</html>");
 		label.setSize(800, 150);
 		label.setLocation(0,0);
 		label.setFont(new Font("Serif", Font.PLAIN, 50));
@@ -46,6 +46,7 @@ public class CYHelloWorldView implements ViewNameAdder {
 	public void addNameLabel(String name) {
 		JLabel label = new JLabel(name);
 		label.setFont(new Font("Serif", Font.BOLD, 40));
+		contentPanel.add(label);
 		frame.setVisible(false);
 		this.init();
 		
