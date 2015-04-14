@@ -1,22 +1,33 @@
 package com.chris.implement;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import com.team.implement.ViewNameAdder;
+import com.dinesh.implement.DSNameCreater;
+import com.yu.implement.LYNameCreater;
 
-public class CYHelloWorldView implements ViewNameAdder {
+public class CYHelloWorldView {
 	private JFrame frame;
 	private JPanel contentPanel;
+	private ArrayList<JLabel> labelList;
+	
 	public CYHelloWorldView(){
 		frame = new JFrame("Circle CI Demo");
-		frame.setSize(800, 300);
-		frame.setLocation(300, 400);
+		frame.setSize(800, 600);
+		frame.setLocation(300, 200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		labelList = new ArrayList<JLabel>();
 		contentPanel = this.createPanel();
+		
+		
+		
 	}
 	
 	public void init(){
@@ -27,26 +38,64 @@ public class CYHelloWorldView implements ViewNameAdder {
 	
 	private JPanel createPanel(){
 		JPanel panel = new JPanel();
-		//panel.setLayout(null);
+		panel.setLayout(null);
 		JLabel label = new JLabel("<html><div style=\"text-align: center;\">" + "Hello World  " + "</html>");
-		label.setSize(800, 150);
-		label.setLocation(0,0);
+		label.setSize(500, 80);
+		label.setLocation(200,0);
 		label.setFont(new Font("Serif", Font.PLAIN, 50));
-		JLabel nameLabel = new JLabel(CYNameCreater.getName());
-		nameLabel.setSize(800, 150);
-		nameLabel.setLocation(0,150);
-		nameLabel.setFont(new Font("Serif", Font.BOLD,40) );
+		
+		
 		panel.add(label);
-		panel.add(nameLabel);
+		labelList.add(this.createYuanLabel());
+		for(JLabel aLabel : labelList){
+			panel.add(aLabel);
+		}
+		
+		JButton buttonY = new JButton("Add Yu");
+		buttonY.setSize(100, 30);
+		buttonY.setLocation(30, 500);
+		buttonY.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {			
+				addNameLabel(LYNameCreater.getName());
+			}
+			
+		});
+		
+		JButton buttonD = new JButton("Add Denish");
+		buttonD.setSize(100, 30);
+		buttonD.setLocation(500, 500);
+		buttonD.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {				
+				addNameLabel(DSNameCreater.getName());
+			}
+			
+		});
+		panel.add(buttonY);
+		panel.add(buttonD);
 		return panel;
 		
 	}
+	
+	private JLabel createYuanLabel(){
+		JLabel nameLabel = new JLabel(CYNameCreater.getName());
+		nameLabel.setSize(200, 80);
+		nameLabel.setLocation(250,100);
+		nameLabel.setFont(new Font("Serif", Font.BOLD,30) );
+		return nameLabel;
+	}
 
-	@Override
-	public void addNameLabel(String name) {
+	
+	private void addNameLabel(String name) {
 		JLabel label = new JLabel(name);
-		label.setFont(new Font("Serif", Font.BOLD, 40));
+		label.setFont(new Font("Serif", Font.BOLD, 30));
+		label.setSize(300, 30);
+		label.setLocation(250,(120 +labelList.size() * 50));
 		contentPanel.add(label);
+		labelList.add(label);
 		frame.setVisible(false);
 		this.init();
 		
