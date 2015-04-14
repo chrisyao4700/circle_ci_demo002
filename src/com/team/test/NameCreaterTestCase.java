@@ -6,9 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.chris.implement.CYHelloWorldView;
+import com.chris.implement.CYNameCreater;
 
-public class ViewTestCase {
+public class NameCreaterTestCase {
 
 	@Before
 	public void setUp() throws Exception {
@@ -20,9 +20,12 @@ public class ViewTestCase {
 
 	@Test
 	public void test() {
-		CYHelloWorldView cyhwv = new CYHelloWorldView();
-		cyhwv.init();
-		
+		fail("Test for fail!");
+
+	}
+	@Test
+	public void testNameCreater() {
+		assertEquals("Yuan Yao", CYNameCreater.getName());
 	}
 
 }

@@ -32,7 +32,7 @@ public class CYHelloWorldView implements ViewNameAdder {
 		label.setSize(800, 150);
 		label.setLocation(0,0);
 		label.setFont(new Font("Serif", Font.PLAIN, 50));
-		JLabel nameLabel = new JLabel("<html><div style=\"text-align: center;\">" + "Yuan Yao," + "</html>");
+		JLabel nameLabel = new JLabel(CYNameCreater.getName());
 		nameLabel.setSize(800, 150);
 		nameLabel.setLocation(0,150);
 		nameLabel.setFont(new Font("Serif", Font.BOLD,40) );
