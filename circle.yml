@@ -2,3 +2,11 @@ machine:
 
   timezone:
     America/Los_Angeles # Set the timezone
+test:
+  override:
+    - java test/junit-tests # use PHPunit for testing
+  post:
+    - bundle exec rake jasmine:ci: # add an extra test type
+        environment:
+          RAILS_ENV: test
+          RACK_ENV: test
