@@ -8,4 +8,4 @@ general:
       - gh-pages
 test:
   override:
-  - java ./src/com/team/test/NameCreaterTestCase.java
+  - java /src/com/team/test/NameCreaterTestCase.java
