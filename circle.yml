@@ -1,30 +1,11 @@
 machine:
+  java:
+    version: oraclejdk6
 
-  timezone:
-    America/Los_Angeles # Set the timezone
-java:
-    version: oraclejdk8
-  node:
-    version: 0.10.28
-    
-    checkout:
-    post:
-    - git submodule sync
-    - git submodule update --init
-dependencies:
-  override:
-    - ant resolve -Divy.useCacheOnly=false
-  cache_directories:
-    - ~/.ivycache-usrz
+general:
+  branches:
+    ignore:
+      - gh-pages
 test:
   override:
-    - ant test -Divy.useCacheOnly=true
-deployment:
-  release:
-    branch: release
-    commands:
-      - ant publish
-          -Dtest.skip=true
-          -Divy.useCacheOnly=true
-          -Divy.buildNumber="${CIRCLE_BUILD_NUM}"
-      - bash ./build/repository.sh
+  - java ./src/com/team/test/NameCreaterTestCase.java
