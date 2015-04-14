@@ -21,6 +21,7 @@ public class YuNameTestCase {
 	@Test
 	public void test() {
 		assertEquals("Yu Luo", LYNameCreater.getName());
+		assertEquals("Luo Yu", LYNameCreater.getName());
 	}
 
 }

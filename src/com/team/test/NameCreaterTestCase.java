@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.chris.implement.CYNameCreater;
+import com.dinesh.implement.DSNameCreater;
 
 public class NameCreaterTestCase {
 
@@ -25,7 +26,14 @@ public class NameCreaterTestCase {
 	}
 	@Test
 	public void testNameCreater() {
+		assertEquals("Yao Yuan", CYNameCreater.getName());
 		assertEquals("Yuan Yao", CYNameCreater.getName());
+		
+		assertEquals("Dinesh Sathasivam",DSNameCreater.getName());
+		assertEquals("Sathasivam Dinesh",DSNameCreater.getName());
+		
+		
+		
 	}
 
 }
