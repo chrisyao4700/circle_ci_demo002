@@ -49,7 +49,3 @@ database:
 ########################
 # Custom notifications
 ########################
-notify:
-  webhooks:
-    # A list of hashes representing hooks. Only the url field is supported.
-    - url: https://circleci.com/hooks/circle
