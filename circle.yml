@@ -2,18 +2,3 @@ machine:
 
   timezone:
     America/Los_Angeles # Set the timezone
-general:
-  build_dir: src/com/team/test
-  
-  
-
-
-#test:
- #- java NameCreatorTestCase.java
-
- 
- test:
-  
-        files:
-          - src/com/team/test/NameCreatorTestCase.java   # can be a direct path to file
-         # - spec/**/*.rb          # or a glob (ruby globs)
