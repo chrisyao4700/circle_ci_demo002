@@ -2,7 +2,7 @@ general:
   build_dir: src/com/team/test
   
   
-mvn dependency:resolve
+
 
 test:
  - java NameCreatorTestCase.java
