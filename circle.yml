@@ -9,9 +9,7 @@ general:
  
  
  test:
-  override:
-    - bundle exec rspec:
-        parallel: true
+  
         files:
           - src/com/team/test/NameCreatorTestCase.java   # can be a direct path to file
          # - spec/**/*.rb          # or a glob (ruby globs)
