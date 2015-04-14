@@ -13,14 +13,8 @@ machine:
       1.8.7-p358-falcon-perf
  
   # Override /etc/hosts
-  hosts:
-    circlehost: 127.0.0.1
-    dev.mycompany.com: 127.0.0.1
  
-  # Add some environmental variables
-  pre:
-    - echo 'export CIRCLE_ENV=test' >> ~./circlerc
- 
+
 ########################
 # Customize checkout
 ########################
