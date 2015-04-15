@@ -6,10 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.chris.implement.CYNameCreater;
 import com.dinesh.implement.DSNameCreater;
 
-public class NameCreaterTestCase {
+public class DSNameCreaterTestCase {
 
 	@Before
 	public void setUp() throws Exception {
@@ -21,19 +20,8 @@ public class NameCreaterTestCase {
 
 	@Test
 	public void test() {
-	//	fail("Test for fail!");
-
-	}
-	@Test
-	public void testNameCreater() {
-		assertEquals("Yao Yuan", CYNameCreater.getName());
-		assertEquals("Yuan Yao", CYNameCreater.getName());
-		
 		assertEquals("Dinesh Sathasivam",DSNameCreater.getName());
 		assertEquals("Sathasivam Dinesh",DSNameCreater.getName());
-		
-		
-		
 	}
 
 }
